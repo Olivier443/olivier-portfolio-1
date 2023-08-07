@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import GlobalStyles from "./GlobalStyles"
+import Root from "./components/Root";
+import Hero from "./components/Hero";
+import About from "./components/About";
+import Techicons from "./components/Techicons";
+import WeatherApp from "./components/weather/WeatherApp";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <GlobalStyles />
+      <Routes>
+        <Route path='/' element={<Root />} />
+        <Route path='/hero' element={<Hero />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/techicons' element={<Techicons />} />
+        <Route path='/weather' element={<WeatherApp />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
