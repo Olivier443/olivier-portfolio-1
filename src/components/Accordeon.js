@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCaretUp, faCaretDown } from '@fortawesome/free-solid-svg-icons'
 
@@ -37,9 +36,9 @@ const Accordeon = () => {
 
 const Accordeondata = () => {
   return (
-    <DIVACCORDEON>
+    <DivAccordeonCntr>
       {questions.map((ev, i) => (<AccordeonItem title={ev.title} text={ev.text} key={ev.title} />))}
-    </DIVACCORDEON>
+    </DivAccordeonCntr>
   )
 }
 
@@ -52,11 +51,11 @@ const AccordeonItem = ({ title, text }) => {
 
   return (
     <div onClick={handleToggle}>
-      <DIVQUESTION>
+      <DivQuestionCntr>
         <P1>{title}</P1>
         <P2>{isOpen ? <FontAwesomeIcon icon={faCaretUp} /> : <FontAwesomeIcon icon={faCaretDown} />}</P2>
-      </DIVQUESTION>
-      {isOpen && <DIVTEXT>{text}</DIVTEXT>}
+      </DivQuestionCntr>
+      {isOpen && <DivText>{text}</DivText>}
     </div>
   )
 }
@@ -64,54 +63,157 @@ const AccordeonItem = ({ title, text }) => {
 export default Accordeon
 
 // This is the container of the component
-const DIVACCORDEON = styled.div`
-  border: solid black 2px;
-  border-radius: 20px;
-  height: 80vh;
-  width: 38vw;
-  padding-left: 1vw;
-  padding-right: 1vw;
-  background-image: linear-gradient(to right, #83a4d4, #b6fbff);
-  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+const DivAccordeonCntr = styled.div`
+  @media (max-width: 800px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    width: 90vw;
+    height: auto;
+    border: solid black 2px;
+    border-radius: 20px;
+    margin: 8vh 0 8vh 0;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  }
+
+  @media (min-width: 801px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    width: 40vw;
+    height: auto;
+    border: solid black 2px;
+    border-radius: 20px;
+    // margin: 8vh 0 8vh 0;
+    margin: 8vh 0 0 0;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  }
 `
 
 // container including the question and the triangle
-const DIVQUESTION = styled.div`
-  display: flex;
-  border: solid green 1px;
-  width: 36vw;
-  height: 4vh;
-  background-image: linear-gradient(to right, #FFEFBA,#FFFFFF);
-  border-radius: 8px;
-  justify-content: space-between;
-  align-items: center;
-  padding-left: 1vw;
-  padding-right: 1vw;
-  margin-top: 1vh;
+const DivQuestionCntr = styled.div`
+  @media (max-width: 800px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.6rem;
+    width: 80vw;
+    height: auto;
+    border-radius: 8px;
+    border: solid green 1px;
+    padding: 1vh 0 1vh 0;
+    background-image: linear-gradient(to right, #FFEFBA,#FFFFFF);
+  }
+
+  @media (min-width: 801px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.6rem;
+    width: 39.6vw;
+    height: auto;
+    border-radius: 20px;
+    border: solid green 1px;
+    padding: 1vh 0 1vh 0;
+    background-image: linear-gradient(to right, #FFEFBA,#FFFFFF);
+  }
 `
 
 // Color of the text for the question
 const P1 = styled.p`
-  font-size: large;
-  font-weight: bold;
+  @media (max-width: 800px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.6rem;
+    width: 80vw;
+    height: auto;
+    border-radius: 8px;
+    padding: 1vh 0 1vh 0;
+    background-image: linear-gradient(to right, #FFEFBA,#FFFFFF);
+  }
+
+  @media (min-width: 801px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.6rem;
+    width: 38vw;
+    height: auto;
+    border-radius: 8px;
+    padding: 1vh 0 1vh 0;
+    background-image: linear-gradient(to right, #FFEFBA,#FFFFFF);
+  }
 `
 
 // container containing the answer
-const DIVTEXT = styled.div`
-  border: solid 1px blue;
-  font-weight: bold;
-  font-size: medium;
-  background-color: azure;
-  width: 34vw;
-  margin-left: 2vw;
-  border-radius: 8px;
-  padding-left: 1vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+const DivText = styled.div`
+  @media (max-width: 800px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+    width: 80vw;
+    height: auto;
+    border-radius: 8px;
+    border: solid blue 1px;
+    padding: 1vh 0 1vh 0;
+    margin: 0 0 1vh 4vw;
+    background-color: azure;
+  }
+
+  @media (min-width: 801px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+    width: 35.6vw;
+    height: auto;
+    border-radius: 8px;
+    border: solid blue 1px;
+    padding: 1vh 0 1vh 0;
+    margin: 0 0 1vh 4vw;
+    background-color: azure;
+  }
 `
 
 // This is the triangle
 const P2 = styled.p`
-  font-size: larger;
+  @media (max-width: 800px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    width: 10vw;
+    height: auto;
+  }
+
+  @media (min-width: 801px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    width: 10vw;
+    height: auto;
+  }
 `

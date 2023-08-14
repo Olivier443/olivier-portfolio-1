@@ -31,33 +31,33 @@ const skills = [
 
 const ProfilePic = () => {
   return (
-    <IMG0 src={robot} alt='picture of Olivier Donze' />
+    <ImgPic src={robot} alt='picture of Olivier Donze' />
   )
 }
 
 const SkillList = () => {
   return (
-    <DIV1>
+    <DivSkillsCntr>
       {skills.map((skill) => (
-        <Skill skill={skill.skill} color={skill.color} />
+        <Skill key={skill.skill} skill={skill.skill} color={skill.color} />
       ))}
-    </DIV1>
+    </DivSkillsCntr>
   )
 }
 
 const Skill = ({ skill, color }) => {
   return (
-    <DIV2 style={{ backgroundColor: color }}>
-      <span>{skill} {color}</span>
-    </DIV2>
+    <DivOneSkill style={{ backgroundColor: color }}>
+      <span>{skill}</span>
+    </DivOneSkill>
   )
 }
 
 const Mycard = () => {
   return (
-    <DIVCARD>
+    <DivCard>
       
-      <DIVICONS>
+      <DivIcons>
           <div>
             <FontAwesomeIcon icon={faHtml5} size="2xl" beat style={{color: "#274046", }} />
           </div>
@@ -73,96 +73,208 @@ const Mycard = () => {
           <div>
             <FontAwesomeIcon icon={faGithub} size="2xl" spin style={{color: "#274046", }} />
           </div>
-      </DIVICONS>
+      </DivIcons>
       
-      <DIVPIC>
+      <DivPic>
         <ProfilePic />
-      </DIVPIC>
+      </DivPic>
 
-      <DIVTEXT>
+      <DivText>
         <IntroCard />
-      </DIVTEXT>
+      </DivText>
 
-      <DIVSKILLS>
+      <DivSkills>
         <SkillList />
-      </DIVSKILLS>
+      </DivSkills>
 
-    </DIVCARD>
+    </DivCard>
   )
 }
 
 export default Mycard
 
+
 // Whole component
-const DIVCARD = styled.div`
-  background-image: linear-gradient(to right, #076585, #fff);
-  border: solid black 2px;
-  height: 80vh;
-  border-radius: 20px;
-  width: 30vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+const DivCard = styled.div`
+  @media (max-width: 800px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    width: 90vw;
+    height: auto;
+    border: solid black 2px;
+    border-radius: 20px;
+    margin: 8vh 0 0 0;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  }
+
+  @media (min-width: 801px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    width: 40vw;
+    height: auto;
+    border: solid black 2px;
+    border-radius: 20px;
+    margin: 12vh 0 8vh 0;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  }
 `
 
 // Component part for the icons
-const DIVICONS = styled.div`
-  display: flex;
-  justify-content: space-around;
-  background-image: linear-gradient(to right, #076585    , #fff);
-  height: 6vh;
-  justify-content: space-around;
-  align-items: center;
-  border-radius: 20px;
+const DivIcons = styled.div`
+  @media (max-width: 800px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: center;
+    width: 90vw;
+    height: auto;
+    padding: 2vh 0 2vh 0;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+
+  @media (min-width: 801px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: center;
+    width: 40vw;
+    height: auto;
+    padding: 2vh 0 2vh 0;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
 `
 
 // Component part for the image
-const DIVPIC = styled.div`
-  display: flex;
-  justify-content: space-around;
-  align-self: center;
-  gap: 3vw;
-  // width: 60vw;
+const DivPic = styled.div`
+  @media (max-width: 800px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    width: 90vw;
+    height: auto;
+  }
+
+  @media (min-width: 801px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    width: 40vw;
+    height: auto;
+  }
 `
 
-const IMG0 = styled.img`
-  display: flex;
-  height: 30vh;
-  width: 30vw;
-  height: auto;
+const ImgPic = styled.img`
+  @media (max-width: 800px) {
+    width: 90vw;
+    height: auto;
+  }
+
+  @media (min-width: 801px) {
+    width: 40vw;
+    height: auto;
+  }
 `
 
 // Component part for the text
-const DIVTEXT = styled.div`
-  display: flex;
-  flex-wrap: wrap;
+const DivText = styled.div`
+  @media (max-width: 800px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    width: 90vw;
+    height: auto;
+  }
+
+  @media (min-width: 801px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    width: 40vw;
+    height: auto;
+  }
 `
 
 // Component part for the skills
-const DIVSKILLS = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-self: center;
-  gap: 30px;
+const DivSkills = styled.div`
+  @media (max-width: 800px) {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    width: 90vw;
+    height: auto;
+    padding: 0 0 4vh 0;
+  }
+
+  @media (min-width: 801px) {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    width: 40vw;
+    height: auto;
+    padding: 0 0 2vh 0;
+  }
 `
 
-const DIV1 = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-  margin-top: 2vh;
+const DivSkillsCntr = styled.div`
+  @media (max-width: 800px) {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    width: 90vw;
+    height: auto;
+    padding: 1vh 1vw 1vh 1vw;
+    row-gap: 4vw;
+    column-gap: 4vh;
+  }
+
+  @media (min-width: 801px) {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    width: 40vw;
+    height: auto;
+    padding: 1vh 1vw 1vh 1vw;
+    row-gap: 2vw;
+    column-gap: 2vh;
+  }
 `
 
-const DIV2 = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  border-radius: 10px;
-  padding: 8px;
-  display: flex;
-  align-items: center;
+const DivOneSkill = styled.div`
+  @media (max-width: 800px) {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: center;
+    height: auto;
+    padding: 2vh 2vw 2vh 2vw;
+    border-radius: 10px;
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+
+  @media (min-width: 801px) {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: center;
+    height: auto;
+    padding: 2vh 2vw 2vh 2vw;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
 `
-
-

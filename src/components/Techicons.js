@@ -5,32 +5,49 @@ import { faHtml5, faCss3, faJs, faReact, faGithub } from '@fortawesome/free-bran
 
 const Techicons = () => {
   return (
-    <TECHCNTR>
-      <DIVCNTR>
-        <FontAwesomeIcon icon={faHtml5} size="2xl" beat style={{color: "#fff", }} />
-        <FontAwesomeIcon icon={faCss3} size="2xl" beat style={{color: "#fff", }} />
-        <FontAwesomeIcon icon={faJs} size="2xl" beat style={{color: "#fff", }} />
-        <FontAwesomeIcon icon={faReact} size="2xl" beat style={{color: "#fff", }} />
-        <FontAwesomeIcon icon={faGithub} size="2xl" beat style={{color: "#fff", }} />
-      </DIVCNTR>
-    </TECHCNTR>
+    <TechIconsCntr>
+      <DivIconsCntr>
+        <FontAwesomeIcon icon={faHtml5} size="2xl" style={{color: "#fff", }} />
+        <FontAwesomeIcon icon={faCss3} size="2xl" style={{color: "#fff", }} />
+        <FontAwesomeIcon icon={faJs} size="2xl" style={{color: "#fff", }} />
+        <FontAwesomeIcon icon={faReact} size="2xl" style={{color: "#fff", }} />
+        <FontAwesomeIcon icon={faGithub} size="2xl" style={{color: "#fff", }} />
+      </DivIconsCntr>
+    </TechIconsCntr>
   )
 }
 
 export default Techicons
 
 // This is this is the whole component
-const TECHCNTR = styled.div`
-  width: 100vw;
-  height: 14vh;
-  background-image: linear-gradient(to right, #000000, #434343);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+const TechIconsCntr = styled.div`
+  @media (max-width: 800px) {
+    width: 100vw;
+    height: 14vh;
+    background-image: linear-gradient(to right, #000000, #434343);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    border-bottom: solid #000 1px;
+  }
+
+  @media (min-width: 801px) {
+    width: 100vw;
+    height: 14vh;
+    background-image: linear-gradient(to right, #000000, #434343);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    border-bottom: solid #000 1px;
+  }
 `
 
 // This is the container container the icons
-const DIVCNTR = styled.div`
+const DivIconsCntr = styled.div`
   width: 60vw;
   justify-content: space-around;
   display: flex;

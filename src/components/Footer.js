@@ -1,23 +1,25 @@
 import React from 'react'
-import { NavLink } from "react-router-dom";
 import styled from 'styled-components'
+import { NavLink } from "react-router-dom";
 
 const Footer = () => {
 
   return (
     <>
-      <FOOTER>
+      <DivFooterCntr>
 
-        <DIVCONTACT>
-          <P1><SPAN>CONTACT</SPAN></P1>
-          <P2><SPAN>PHONE - &nbsp;</SPAN>(999) 999-9999</P2>
-          <P2><SPAN>EMAIL - &nbsp;</SPAN>john.doe@example.com</P2>
-          <P2><SPAN>ADDRESS - &nbsp;</SPAN>999 Example Street, Example, AA, H8s 9K3</P2>
-        </DIVCONTACT>
+        <DivContactCntr>
+          <P1>CONTACT</P1>
+          <UL>
+            <LI>PHONE - &nbsp; (999) 999-9999 </LI>
+            <LI>EMAIL - &nbsp; john.doe@example.com</LI>
+            <LI>ADDRESS - &nbsp;999 Example Street, Example, AA, H8S 9K3</LI>
+          </UL>
+        </DivContactCntr>
 
-        <DIVBAR></DIVBAR>
+        <DivBar2></DivBar2>
 
-        <DIVMAP>
+        <DivMapSiteCntr>
           <P1>SITE MAP</P1>
           <UL>
             <LI><NavLink1 to="/hero" style={{ textDecoration: 'none' }}>Hero</NavLink1></LI>
@@ -27,9 +29,9 @@ const Footer = () => {
             <LI><NavLink1 to='/about' style={{ textDecoration: 'none' }}>Contact</NavLink1></LI>
             <LI><NavLink1 to='/weather' style={{ textDecoration: 'none' }}>Weather</NavLink1></LI>
           </UL>
-        </DIVMAP>
+        </DivMapSiteCntr>
 
-      </FOOTER>
+      </DivFooterCntr>
     </>
   )
 }
@@ -37,70 +39,145 @@ const Footer = () => {
 export default Footer
 
 // This is the whole component
-const FOOTER = styled.footer`
-  display: flex;
-  width: 100vw;
-  height: 20vh;
-  gap: 2vw;
-  background-image: linear-gradient(to right, #000000, #434343);
-`
+const DivFooterCntr = styled.footer`
+  @media (max-width: 800px) {
+    width: 100vw;
+    height: auto;
+    background-image: linear-gradient(to right, #000000, #434343);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    font-weight: bold;
+    gap: 2vw;
+    border-bottom: solid #000 1px;
+  }
 
-// This is the container including the contact info
-const DIVCONTACT = styled.div`
-  display: flex;
-  flex-direction: column;
-  color: #fff;
-  padding-left: 1vw;
-  height: 16vh;
-  align-self: center;
+  @media (min-width: 801px) {
+    width: 100vw;
+    height: auto;
+    background-image: linear-gradient(to right, #000000, #434343);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    font-weight: bold;
+    gap: 2vw;
+    border-bottom: solid #000 1px;
+  }
 `
 
 // This is the title CONTACT and SITE MAP
 const P1 = styled.p`
-  font-weight: bold;
+  @media (max-width: 800px) {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #fff;
+    padding: 4vh 0 2vh 0;
+  }
+
+  @media (min-width: 801px) {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #fff;
+    padding: 4vh 0 2vh 0;
+  }
 `
 
-// This is the text in the CONTACT container
-const P2 = styled.p`
-  font-size: xx-small;
-  display: flex;
-  line-height: 0%;
+// This is the container including the Contact info
+const DivContactCntr = styled.div`
+  @media (max-width: 800px) {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    color: #fff;
+    padding: 0 0 0 1vw;
+    align-self: flex-start;
+  }
+
+  @media (min-width: 801px) {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    color: #fff;
+    padding: 0 0 0 1vw;
+    align-self: flex-start;
+  }
 `
 
-// This is the span for the text in the CONTACT container
-const SPAN = styled.span`
-  font-weight: bold;
-`
+// This is the container including the Site Map info
+const DivMapSiteCntr = styled.div`
+  @media (max-width: 800px) {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    color: #fff;
+    padding: 0 0 0 1vw;
+    align-self: flex-start;
 
-// This is the container including the contact info
-const DIVMAP = styled.div`
-  display: flex;
-  flex-direction: column;
-  color: #fff;
-  padding-left: 1vw;
-  height: 16vh;
-  align-self: center;
+  }
+
+  @media (min-width: 801px) {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    color: #fff;
+    padding: 0 0 0 1vw;
+    align-self: flex-start;
+  }
 `
 
 const UL = styled.ul`
   list-style: none;
+  display: flex;
+  flex-direction: column;
+  padding: 2vh 0 8vh 0;
 `
 
 const LI = styled.li`
-  font-size: xx-small;
-  line-height: 16px;
-  font-weight: bold;
-  color: #fff;
+  @media (max-width: 800px) {
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #fff;
+  }
+
+  @media (min-width: 801px) {
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #fff;
+  }
 `
 
 const NavLink1 = styled(NavLink)`
-  color: #fff;
+  @media (max-width: 800px) {
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #fff;
+  }
+
+  @media (min-width: 801px) {
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #fff;
+  }
 `
 
-const DIVBAR = styled.div`
-  height: 14vh;
-  width: 1px;
-  display: flex;
-  background-image: linear-gradient(to right, #fff, #fff);
-  margin-top: 2vh;
+const DivBar2 = styled.div`
+  @media (max-width: 800px) {
+    display: flex;
+    flex-direction: column;
+    height: 26vh;
+    background-image: linear-gradient(to right, #fff, #fff);
+    width: 1px;
+  }
+
+  @media (min-width: 801px) {
+    display: flex;
+    flex-direction: column;
+    height: 26vh;
+    background-image: linear-gradient(to right, #fff, #fff);
+    width: 1px;
+  }
 `

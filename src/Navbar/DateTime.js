@@ -27,7 +27,8 @@ export default DateTime
 const DIV1 = styled.div`
   display: flex;
   border: solid black 1px;
-  max-width: 16vw;
+  max-width: 20vw;
+  margin-left: 1vw;
   height: 4vh;
   border-radius: 50px;
   justify-content: space-around;
@@ -36,6 +37,13 @@ const DIV1 = styled.div`
   padding-left: 0.5vw;
   padding-right: 0.5vw;
   background-image: linear-gradient(to right, #108dc7    , #ef8e38);
+
+  @media (max-width: 280px) {
+    flex-direction: column;
+    min-width: 70vw;
+    height: 10vh;
+    margin-left: 4vw;
+  }
 `
 
 const SPAN1 = styled.span`
