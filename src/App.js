@@ -1,13 +1,14 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Hero from "./components/Hero";
-import About from "./components/About";
-import Projects from "./components/Projects";
+import About from "./components/about/About";
+import Projects from "./components/projects/Projects";
 import GlobalStyles from "./GlobalStyles"
 import Techicons from "./components/Techicons";
 import WeatherApp from "./components/weather/WeatherApp";
 import Root from "./components/Root";
-import { SliderData } from "./components/SliderData";
+import { SliderData } from "./components/projects/SliderData";
 import Navbar1 from "./Navbar/Navbar1";
+
 
 function App() {
     return (

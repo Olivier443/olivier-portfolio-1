@@ -1,70 +1,61 @@
-# Getting Started with Create React App
+# Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## What My PortFolio is about?
 
-## Available Scripts
+I created this portfolio to experiment and apply various concepts learnt in HTML, CSS, JavaScript, React, and Style-Components. 
+I also integrated packages to my PortFolio.
+Code is open source in GitHub, and the application is deployed on Vercel.
+Also, this website is responsive.
 
-In the project directory, you can run:
+## Sections of my PortFolio
 
-### `npm start`
+The main page, Navbar, and Footer allow to direct you through the various sections of my website that are:
+About
+Projects
+Weather
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The about page will show my card, an accordeon, a form to contact me, and an embedded video.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The Projects page is a carousel showing the various projects I accomplished during my Bootcamp.
 
-### `npm test`
+The Weather page allows to disclose information about the weather in your area.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## What Technologies were used?
 
-### `npm run build`
+I used various hooks from react and react-router-dom to create the navigation, and make my project working. 
+The hooks below are the one that were used in the various components of my PortFolio:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+import React, { useState, useEffect, useRef } from 'react';
+import { Link, NavLink, Outlet } from 'react-router-dom';
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### API
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### Moment.js
 
-### `npm run eject`
+To show, and format an accurate day/month/year/time, I decided to use Moment.js.
+Website can be found at the following URL: https://momentjs.com/
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+I used this API to show the date when showing the weather.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Weather API
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+I used this API to fetch the data from a server concerning the weather.
+These information obtained from their server, can be seen in the weather page of my website.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Website can be found at the following URL: https://openweathermap.org/api
 
-## Learn More
+### CSS and Style-components
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+I styled most of the components with Style-Components that allowed me to keep the code lean.
+I did use the classNames as well to show I could use another way to styled my components.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### Icons
 
-### Code Splitting
+Icons were obtained through two different libraries:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+fontawesome
+https://fontawesome.com/docs/web/use-with/react/
 
-### Analyzing the Bundle Size
+React Icons
+https://react-icons.github.io/react-icons
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

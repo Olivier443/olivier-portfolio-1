@@ -15,8 +15,8 @@ export const DateTime = () => {
 
   return(
     <DIV1>
-      <P1><SPAN1>Time: </SPAN1>{date.toLocaleTimeString()}</P1>
-      <P1><SPAN1>Date: </SPAN1>{date.toLocaleDateString()}</P1>
+      <div><P1><SpanStyled>Time: </SpanStyled>{date.toLocaleTimeString()}</P1></div>
+      <div><P2><SpanStyled>Date: </SpanStyled>{date.toLocaleDateString()}</P2></div>
     </DIV1>
   )
 
@@ -24,32 +24,61 @@ export const DateTime = () => {
 
 export default DateTime
 
+// Container including both the Time and Day
 const DIV1 = styled.div`
   display: flex;
+  align-items: center;
   border: solid black 1px;
-  max-width: 20vw;
-  margin-left: 1vw;
-  height: 4vh;
   border-radius: 50px;
-  justify-content: space-around;
-  align-self: center;
   gap: 10px;
-  padding-left: 0.5vw;
-  padding-right: 0.5vw;
+  padding: 4px 4px 4px 4px;
+  margin: 0 0 0 10px;
   background-image: linear-gradient(to right, #108dc7    , #ef8e38);
+  height: 6vh;
 
-  @media (max-width: 280px) {
-    flex-direction: column;
-    min-width: 70vw;
+  @media (max-height: 650px) and (max-width: 600px) {
+    font-size: 1rem;
     height: 10vh;
-    margin-left: 4vw;
   }
 `
 
-const SPAN1 = styled.span`
+// Time
+const P1 = styled.p`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-weight: bold;
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+    width: 140px;
+  }
+
+  @media (min-width: 801px) {
+    flex-direction: row;
+    width: 160px;
+  }
 `
 
-const P1 = styled.span`
-  align-self: center;
+// Day
+const P2 = styled.p`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+    width: 140px;
+  }
+
+  @media (min-width: 801px) {
+    flex-direction: row;
+    width: 140px;
+  }
+`
+
+// SPAN Time
+const SpanStyled = styled.span`
+  font-weight: bold;
 `

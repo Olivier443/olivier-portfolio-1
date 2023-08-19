@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 import styled from 'styled-components'
 import coding from '../assets/coding.jpg'
 import github from '../assets/github.svg'
@@ -12,8 +13,8 @@ const Hero = () => {
           <H1>Hi, <br />I am Olivier Donze</H1>
           <H2>Love learning and implementing new technologies...</H2>
           <DIV2>
-            <IMG2 src={github} alt="icon of Github" />
-            <IMG2 src={linkedin} alt="icon of Linkedin" />
+          <Link to='https://github.com/Olivier443'><IMG2 src={github} alt="icon of Github"></IMG2></Link>
+          <Link to='/'><IMG2 src={linkedin} alt="icon of Linkedin" /></Link>
           </DIV2>
         </DIV1>
         <DIVBAR></DIVBAR>

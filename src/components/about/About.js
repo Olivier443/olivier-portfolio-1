@@ -3,9 +3,9 @@ import Mycard from './Mycard'
 import Accordeon from './Accordeon'
 import styled from 'styled-components'
 import Form from './Form';
-import Footer from './Footer'
-import Techicons from './Techicons'
-import ScrollTop from './ScrollTop';
+import Footer from '../Footer'
+import Techicons from '../Techicons'
+import ScrollTop from '../ScrollTop';
 
 const About = () => {
   

@@ -33,7 +33,7 @@ const Root = () => {
       <DivProjectsCntr>
         <DivTextProjects>
           <P1>Projects!</P1>
-          <P2>Made with React, JavaScript, CSS, Style-Components, and more... </P2>
+          <P2>Made with React, JavaScript, CSS, Style-Components, and more... Deployed with Vercel...</P2>
         </DivTextProjects>
         <DivBtnProjects>
           <BTN onClick={ () => {navigate('projects')} }>Take me there!</BTN>

@@ -1,5 +1,3 @@
-import React from 'react'
-
 const ScrollTop = () => {
   const goToTop = () => {
     window.scrollTo({
@@ -12,4 +10,3 @@ const ScrollTop = () => {
 };
 
 export default ScrollTop
-

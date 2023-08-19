@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import robot from '../assets/robot.jpg'
+import robot from '../../assets/robot.jpg'
 import IntroCard from './IntroCard'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHtml5, faCss3, faJs, faReact, faGithub } from '@fortawesome/free-brands-svg-icons'
@@ -93,7 +93,6 @@ const Mycard = () => {
 
 export default Mycard
 
-
 // Whole component
 const DivCard = styled.div`
   @media (max-width: 800px) {
@@ -119,6 +118,7 @@ const DivCard = styled.div`
     border: solid black 2px;
     border-radius: 20px;
     margin: 12vh 0 8vh 0;
+    background-image: linear-gradient(to right, #FFEFBA,#FFFFFF);
     box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
   }
 `
