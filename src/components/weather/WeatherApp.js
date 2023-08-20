@@ -12,7 +12,6 @@ const WeatherApp = () => {
   useEffect(() => {
     const fetchData = () => {
       navigator.geolocation.getCurrentPosition(function (position) {
-        console.log(`WeatherApp position.coords.lat: ${position.coords.latitude} position.coords.long=${position.coords.longitude}`);
         setLat(position.coords.latitude);
         setLong(position.coords.longitude);
       });
@@ -22,9 +21,7 @@ const WeatherApp = () => {
         fetch(`${process.env.REACT_APP_API_URL}/weather/?lat=${lat}&lon=${long}&units=metric&APPID=${process.env.REACT_APP_API_KEY}`)
           .then(res => res.json())
           .then(result => {
-            console.log(`WeatherApp fetch lat: ${lat} long: ${long}`);
             setData(result);
-            console.log(result);
           });
       }
     }

@@ -17,10 +17,8 @@ const Form = () => {
     }, [showError]);
 
   const loginUser = JSON.parse(sessionStorage.getItem('loginUser'));
-  console.log(`Form.js loginUser=${JSON.stringify(loginUser)}`);
 
   const handleChange = (ev) => {
-    console.log(`Form.js handleChange id=${ev.target.id} value=${ev.target.value}`);
     setUser({
       ...user,
       [ev.target.id]: ev.target.value
@@ -31,7 +29,6 @@ const Form = () => {
   const handleSubmit = (ev) => {
     ev.preventDefault();
 
-    console.log(`Form.js => handleSubmit => JSON.stringify({user})=${JSON.stringify({ user })}`);
     let inError = false;
 
     const fnameLength = document.getElementById('fname').value.length;
@@ -56,7 +53,6 @@ const Form = () => {
     }
 
     const question = document.getElementById('question').value.trim();
-    console.log(`question=${question} nb words=${question.split(' ').length}`);
     if (question.length > 0 && question.split(' ').length < 3) {
       setShowError({ status: 1, fieldIdInError: 'question', errorMessage: 'Your question should have at least 3 words!' });
       inError = true;
@@ -75,9 +71,7 @@ const Form = () => {
 
       let inquiries = [];
       if (user.inquiries !== undefined) inquiries = user.inquiries;
-      console.log(`inquiries=${inquiries}`);
       inquiries.push(question);
-      console.log(`inquiries=${inquiries}`);
       setUser({ ...user, inquiries: inquiries });
 
       questionIndex.current += 1;
@@ -327,7 +321,6 @@ const PError = styled.p`
 // Styling for the label
 const LabelStyled = styled.label`
   display: flex;
-  // flex-direction: row;
   justify-content: flex-end;
   align-content: center;
   text-align: center;
@@ -388,13 +381,11 @@ const DivLabelTextArea = styled.div`
 const LabelStyledInquiry = styled.label`
   display: flex;
   justify-content: center;
-  // align-content: center;
   align-self: center;
   text-align: center;
   height: auto;
   padding: 1vh 2vw 1vh 2vw;
   font-weight: bold;
-  // border: solid yellow 2px;
   
   @media (max-width: 800px) {
     width: auto;
